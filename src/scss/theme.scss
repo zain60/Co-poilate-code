@@ -1,0 +1,612 @@
+@use './components/variables.scss' as *;
+@use './components/init.scss' as *;
+
+body {
+    background-color: #F9FAFB;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+.font-outfit {
+    font-family: "Outfit", sans-serif;
+}
+
+.container-auth {
+    max-width: 1440px;
+    padding-left: 9.4%;
+    padding-right: 9.4%;
+    margin: 0 auto;
+
+    @media screen and (max-width:1500px) {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    @media screen and (min-width:1501px) {
+        max-width: 1440px;
+    }
+}
+
+// bg-white rounded-2xl border border-solid border-[#e4e7ec]
+.content-card-bg {
+    background-color: $white-color;
+    border-radius: 16px;
+    border: 1px solid #E4E7EC;
+
+    &.p--24 {
+        padding: 24px;
+
+        @include for_breakpoint(sm-mobile) {
+            padding: 16px;
+        }
+
+        @include for_breakpoint(lg-mobile) {
+            padding: 16px;
+        }
+
+        @include for_breakpoint(tablet) {
+            padding: 16px;
+        }
+    }
+}
+
+
+// items-center gap-[274px] p-6 border-b [border-bottom-style:solid] border-[#e4e7ec] flex relative self-stretch w-full flex-[0_0_auto]
+.cases-tabs-container {
+    padding: 24px;
+    border-bottom: 1px solid #E4E7EC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 274px;
+    width: 100%;
+    flex: 0 0 auto;
+    align-self: stretch;
+
+}
+
+.contact-list-main-div {
+    display: flex;
+    flex-direction: column;
+    width: 304px;
+    height: 800px;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    background-color: white;
+    border-right: 1px solid #e4e7ec;
+    border-bottom: 1px solid #e4e7ec;
+    // border-left: 1px solid #e4e7ec;
+}
+
+.content-wrapper-div {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    // border: 1px solid #e4e7ec;
+}
+
+.contact-name {
+    align-self: stretch;
+    margin-top: -1px;
+    font-weight: 500;
+    color: #344053;
+    font-size: 14px;
+    line-height: 142.857%;
+    font-family: "Outfit", sans-serif;
+}
+
+.flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.bg--btn {
+    border-radius: 8px;
+    border: 1px solid $dark-light-EC;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F9FAFB;
+    }
+}
+
+.status-tag {
+    margin-top: -1px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 150%;
+    white-space: nowrap;
+    font-style: normal;
+    font-family: "Outfit", sans-serif;
+
+}
+
+.dropdown-content {
+    .text {
+        margin-top: -1px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #344053;
+        line-height: 150%;
+        font-style: normal;
+    }
+}
+
+.text-question {
+    margin-top: -1px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #344053;
+    line-height: 150%;
+    white-space: nowrap;
+    font-style: normal;
+}
+
+.ongoing-card {
+    border: 1px solid $dark-light-EC;
+    border-radius: 16px;
+    padding: 24px;
+
+    &.inner-card {
+        border-top: 1px solid $dark-light-EC;
+    }
+}
+
+.ant-modal-body {
+    padding: 0px !important;
+}
+
+// .ant-form-item{
+//     margin-bottom:  0 !important;
+// }
+.ant-form-item-required {
+    font-weight: 500 !important;
+}
+
+.ant-table-cell {
+    padding: 12px 8px !important;
+}
+
+
+.action-modal {
+    .ant-modal-content {
+        border-radius: 24px;
+        background: #FFF;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .ant-modal-close {
+        top: 18px;
+        inset-inline-end: 20px;
+        border-radius: 24px !important;
+        background: #F2F4F7 !important;
+    }
+}
+
+.setting-layout-div {
+    display: flex;
+    padding: 0px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 12px 12px 0px 0px;
+    border-bottom: 1px solid #E4E7EC;
+}
+
+.setting-layout-link {
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 12px;
+    color: #667085;
+    /* 142.857% */
+
+
+    &.active {
+        border-radius: 0px;
+        border-bottom: 2px solid #465FFF;
+        color: #465FFF;
+
+    }
+}
+
+// .ant-form-item-control-input-content{
+//     height: 44px !important;
+// }
+
+.remember-checkbox {
+    .ant-form-item-control-input-content {
+        height: auto !important;
+    }
+}
+
+.personal-info-form {
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-form-item {
+        margin-bottom: 0px !important;
+    }
+
+    .ant-form-item {
+        margin-bottom: 0px !important;
+    }
+
+    label {
+        font-weight: 500 !important;
+        color: #344054 !important;
+        font-family: "Outfit", sans-serif;
+    }
+
+    .ant-input {
+        height: 44px !important;
+    }
+}
+
+.archive-dropdown {
+    position: absolute;
+    border-radius: 16px;
+    border: 1px solid #E4E7EC;
+    background: #FFF;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    width: 232px;
+    padding: 12px;
+    gap: 10px;
+    z-index: 10;
+}
+
+.archive-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.archive-dropdown-item:hover {
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+
+.custom-checkbox {
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-checkbox-wrapper.ant-checkbox-wrapper-in-form-item input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.otp-modal {
+    .ant-modal-content {
+        border-radius: 24px;
+    }
+}
+
+.phone-field-container {
+    ::before {
+        display: none !important;
+    }
+}
+
+.password-field-container {
+    margin-bottom: 20px !important;
+
+    label.ant-form-item-required::before {
+        display: none !important;
+    }
+
+    .ant-input-outlined {
+        height: 48px !important;
+    }
+
+    .ant-form-item-required {
+        color: #344054 !important;
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+
+}
+
+.payment-form-container {
+    input {
+        height: 44px !important;
+    }
+
+    .select-height {
+        height: 44px !important;
+    }
+
+    .ant-input-affix-wrapper {
+        height: 44px !important;
+        display: flex;
+        align-items: center;
+    }
+
+    //     .ant-select-selector{
+    //         height: 48px !important;
+    //     }
+    margin-bottom: 0px !important;
+
+    label {
+        color: #344054 !important;
+        font-size: 14px !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        line-height: 142.857% !important;
+        font-family: "Outfit", sans-serif !important;
+    }
+}
+
+.ant-table-body {
+    table {
+        tbody {
+            tr {
+                td {
+                    padding: 15px 24px !important;
+                    text-align: left !important;
+                    vertical-align: middle !important;
+                }
+
+                &:first-child {
+                    display: none !important;
+                }
+            }
+        }
+
+    }
+}
+
+
+.set-new-password-form {
+    label {
+        color: #344054 !important;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.857%;
+        font-family: "Outfit", sans-serif;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-form-item {
+        margin-bottom: 20px !important;
+    }
+}
+
+.task-form {
+    .ant-form-item-label {
+        padding-bottom: 6px !important;
+    }
+
+    label {
+        color: #344054 !important;
+        font-weight: 500 !important;
+        line-height: 142.857% !important;
+        font-family: "Outfit", sans-serif;
+    }
+
+    input {
+        height: 44px !important;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-form-item {
+        margin-bottom: 20px !important;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-select-single {
+        height: 44px !important;
+    }
+
+}
+
+.ant-btn-color-primary {
+    &:hover {
+        background: #3641F5 !important;
+    }
+}
+
+.medical-provider-form {
+    .ant-form-item {
+        margin-bottom: 8px !important;
+    }
+
+    .ant-form-item-label {
+        padding-bottom: 6px !important;
+    }
+
+    label {
+        color: #344054 !important;
+        font-weight: 500 !important;
+        line-height: 142.857% !important;
+        font-family: "Outfit", sans-serif;
+    }
+
+    input {
+        height: 44px !important;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-form-item {
+        margin-bottom: 10px !important;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-select-single {
+        height: 44px !important;
+    }
+
+    .ant-form-item-control-input-content {
+        height: auto !important;
+    }
+
+    .checkbox-provider {
+        margin-bottom: 0px !important;
+    }
+
+    .react-tel-input {
+        margin-top: 3px !important;
+
+        .special-label {
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 142.857% !important;
+            font-family: "Outfit", sans-serif;
+            color: #344054 !important;
+            margin-bottom: 6px !important;
+        }
+    }
+}
+
+.action-modal {
+    .ant-modal-footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.add-new-case-form,
+.edit-personal-info-form {
+    .ant-form-item-label {
+        padding-bottom: 6px !important;
+    }
+
+    label {
+        color: #344054 !important;
+        font-weight: 500 !important;
+        line-height: 142.857% !important;
+        font-family: "Outfit", sans-serif;
+    }
+
+    .ant-picker {
+        height: 44px !important;
+    }
+
+    input {
+        height: 44px !important;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-form-item {
+        margin-bottom: 20px !important;
+    }
+
+    .ant-form-item {
+        margin-bottom: 8px !important;
+    }
+
+    :where(.css-dev-only-do-not-override-1a3rktk).ant-select-single {
+        height: 44px !important;
+    }
+
+    .ant-select {
+        height: 44px !important;
+    }
+}
+
+
+
+.checkbox-signup {
+    margin-bottom: 20px !important;
+
+    .ant-checkbox-label {
+        color: #667085 !important;
+    }
+}
+
+// .ant-form-item{
+//     margin-bottom: 4px !important;
+// }
+
+.ant-input-outlined {
+    height: 44px !important;
+}
+
+.ant-select-single {
+    height: 44px !important;
+}
+
+.add-new-case-form {
+    .ant-form-item {
+        margin-bottom: 20px !important;
+    }
+
+    .react-tel-input {
+        margin-top: 3px !important;
+
+        .special-label {
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 142.857% !important;
+            font-family: "Outfit", sans-serif;
+            color: #344054 !important;
+            margin-bottom: 6px !important;
+        }
+    }
+}
+
+.personal-info-form {
+    .react-tel-input {
+        margin-top: 3px !important;
+
+        .special-label {
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 142.857% !important;
+            font-family: "Outfit", sans-serif;
+            color: #344054 !important;
+            margin-bottom: 8px !important;
+        }
+    }
+}
+
+.password-reset-modal {
+    .ant-modal-content {
+        border-radius: 24px !important;
+
+        .ant-modal-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+        }
+    }
+}
+
+.edit-personal-info-form {
+    .react-tel-input {
+        .special-label {
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 142.857% !important;
+            font-family: "Outfit", sans-serif;
+            color: #344054 !important;
+            margin-bottom: 8px !important;
+        }
+    }
+}
+
+.login-form {
+    .ant-form-item {
+        margin-bottom: 0px !important;
+    }
+}

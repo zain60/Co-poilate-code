@@ -1,0 +1,94 @@
+@use './variables.scss' as *;
+
+
+h4{
+    font-family: "Outfit", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 122.222%;
+    @include for_breakpoint(sm-mobile) {
+        font-size: 24px;
+    }
+    @include for_breakpoint(lg-mobile) {
+        font-size: 28px;
+    }
+    @include for_breakpoint(tablet) {
+        font-size: 30px;
+    }
+}
+h5{
+    font-family: "Outfit", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 126%;
+}
+h6{
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 133.333%;
+
+    &.font-600{
+        font-weight: 600;
+    }
+}
+
+p{
+    font-family: "Outfit", sans-serif;
+    line-height: normal; 
+    font-weight: 400;
+    word-break: break-word;
+}
+
+
+.page-heading{
+    font-family: "Outfit", sans-serif;
+    line-height: normal; 
+    font-weight: 600;
+    font-size: 20px;
+    word-break: break-word;
+}
+
+ 
+.fs-20{
+    font-size: 20px;
+    line-height: 150%;
+    font-family: "Outfit", sans-serif;
+}
+.fs-18{
+    font-size: 18px;
+    line-height: 155.556%;
+    font-family: "Outfit", sans-serif;
+}
+.fs-16{
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Outfit", sans-serif;
+}
+.fs-14{
+    font-size: 14px;
+    line-height: 142.857%;
+    font-family: "Outfit", sans-serif;
+}
+.fs-12{
+    font-size: 12px;
+    line-height: 150%;
+    font-family: "Outfit", sans-serif;
+}
+
+
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-600{
+    font-weight: 600;
+}
+.fw-700{
+    font-weight: 700;
+}

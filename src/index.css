@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Auth input styles */
+.auth-input {
+  color: #000000 !important;
+}
+
+.auth-input::placeholder {
+  color: #9CA3AF !important;
+}

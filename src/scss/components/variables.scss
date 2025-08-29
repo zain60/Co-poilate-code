@@ -1,0 +1,101 @@
+/* Media Queries */
+@use 'sass:map' as map;
+@use 'sass:string' as string;
+
+
+$primary-color: #465FFF;
+$primary-color-bg: #ECF3FF;
+$Background-Body-Secondary: #F9FAFB;
+$color-gray-54:  #344054;
+$white-color: #FFF;
+$blue-39: #1D2939;
+$blue-85: #667085;
+$blue-light-B3: #98A2B3;
+$dark-light-A8: #8899A8;
+$dark-light-EC: #E4E7EC;
+$danger-color: #F04438;
+$pink-color: #DD2590;
+$success-color: #039855;
+$success-color-bg: #ECFDF3;
+
+$secondary-color-54: #344054;
+$gray-color-67: #475467;
+// $quaternary-color: #444;
+// $quinary-color: #555;
+// $senary-color: #666;
+// $septenary-color: #777;
+$primary-hover-color: #465fff9e;
+
+
+.text-primary{
+  color: $primary-color;
+}
+.text-gray-54{
+  color: $color-gray-54;
+}
+.text-dark-light-A8{
+  color: $dark-light-A8;
+}
+.text-blue-39{
+  color: $blue-39 !important;
+}
+.text-blue-85{
+  color: $blue-85 !important;
+}
+.pink-color{
+  color: $pink-color;
+}
+.secondary-color-54{
+  color: $secondary-color-54;
+}
+.gray-color-67{
+  color: $gray-color-67;
+}
+.blue-light-b3{
+  color: $blue-light-B3;
+}
+.success-color{
+  color: $success-color;
+}
+.success-color-bg{
+  background-color: $success-color-bg;
+}
+.bg-gray-54{
+  background-color: $Background-Body-Secondary;
+}
+.bg-primary-color-bg{
+  background-color: $primary-color-bg;
+}
+
+
+$media_queries: (
+    'sm-mobile'    : "only screen and (max-width: 479px)",
+    'lg-mobile'    : "only screen and (min-width: 480px) and (max-width: 767px)",
+    'tablet'       : "only screen and (min-width: 768px) and (max-width: 1024px)",
+    'laptop'       : "only screen and (min-width: 1025px) and (max-width: 1290px)",
+    'desktop'      : "only screen and (min-width: 1291px) and (max-width: 1560px)",
+    'tv'           : "only screen and (min-width: 1561px) and (max-width: 1920px)",
+    'lg-tv'        : "only screen and (min-width: 1921px)",
+    'retina2'      : "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)",
+    'retina3'      : "only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi)",
+    'landscape'    : "screen and (orientation:landscape)",
+    'portrait'     : "screen and (orientation:portrait)",
+
+    'air-laptop'       : "only screen and (min-width: 1025px) and (max-width: 1150px)",
+
+);
+
+/* Mixin for Breakpoints */
+@mixin for_breakpoint($breakpoints...) {
+    @each $breakpoint in $breakpoints {
+      $media-query: map.get($media_queries, $breakpoint);
+
+      @if $media-query != null {
+        @media #{string.unquote($media-query)} {
+          @content;
+        }
+      } @else {
+        @warn "Breakpoint `#{$breakpoint}` does not exist in \$media_queries.";
+      }
+    }
+  }

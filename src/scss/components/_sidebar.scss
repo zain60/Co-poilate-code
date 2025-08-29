@@ -1,0 +1,132 @@
+@use './variables.scss' as *;
+
+.sidebar{
+    width: 260px;
+    height: 100dvh;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    z-index: 99;
+    min-height: 647px;
+    overflow-y: auto;
+
+    .sidebar-text{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 12px;
+        transition: background-color 0.2s ease-in-out;
+        
+        // Add hover effects for the group
+        &:hover {
+            background-color: #ECF3FF;
+            
+            // Change icon color on hover
+            div:first-child {
+                color: #465FFF;
+                
+                // Target SVG paths if needed
+                svg {
+                    path {
+                        fill: #465FFF;
+                    }
+                }
+            }
+            
+            // Change text color on hover
+            .text {
+                color: #465FFF !important;
+            }
+        }
+        &.active{
+            background-color: #ECF3FF;
+            
+            // Change icon color on hover
+            div:first-child {
+                color: #465FFF;
+                
+                // Target SVG paths if needed
+                svg {
+                    path {
+                        fill: #465FFF;
+                    }
+                }
+            }
+            
+            // Change text color on hover
+            .text {
+                color: #465FFF !important;
+            }
+        }
+        
+        .text{
+            position: relative;
+            font-family: "Outfit", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 142.857%;
+            color: $color-gray-54;
+            transition: color 0.2s ease-in-out;
+            
+            &.logout{
+                color: $danger-color;
+                
+                &:hover {
+                    color: #465FFF;
+                }
+            }
+
+            
+        }
+    }
+    
+    // Active state styling for the entire sidebar item
+    .active {
+        .sidebar-text {
+            background-color: #ECF3FF;
+            
+            div:first-child {
+                color: #465FFF;
+                
+                svg {
+                    path {
+                        fill: #465FFF;
+                        stroke: #465FFF;
+                    }
+                }
+            }
+            
+            .text {
+                color: #465FFF;
+            }
+        }
+    }
+}
+
+.layout-flex {
+    display: flex;
+    align-items: start;
+
+    .content-wrapper{
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+   
+    .content-padding {
+        padding: 24px;
+    }
+
+    .layout-padding {
+        padding: 0px 0px 0px 260px;
+        @include for_breakpoint(sm-mobile) {
+            padding: 0px 0px 0px 0px;
+        }
+        @include for_breakpoint(lg-mobile) {
+            padding: 0px 0px 0px 0px;
+        }
+        @include for_breakpoint(tablet) {
+            padding: 0px 0px 0px 0px;
+        }
+    }
+}
