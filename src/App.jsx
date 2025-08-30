@@ -24,6 +24,7 @@ import PublicTaskForm from "./pages/PublicTask/PublicTaskForm";
 import TwilioSettings from "./pages/Settings/Twilio/TwilioSettings";
 import AssistantSettings from "./pages/Settings/Vapi/AssistantSettings";
 import Campaigns from "./pages/Settings/Campaigns/Campaigns";
+import Recordings from "./pages/Settings/Recordings/Recordings";
 
 const NotFound = () => <h1>404: Page Not Found</h1>;
 
@@ -192,6 +193,14 @@ function App() {
           element={
             <PrivateRoute>
               <Campaigns />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/settings/recordings"
+          element={
+            <PrivateRoute>
+              <Recordings />
             </PrivateRoute>
           }
         />
