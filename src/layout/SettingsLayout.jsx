@@ -33,7 +33,6 @@ const SettingsLayout = ({ children }) => {
           <Link to="/settings/twilio" className={`setting-layout-link ${currentPath === "/settings/twilio" ? "active" : ""}`}>Purchase Number</Link>
           <Link to="/settings/vapi-assistant" className={`setting-layout-link ${currentPath === "/settings/vapi-assistant" ? "active" : ""}`}>Knowledge Base</Link>
           <Link to="/settings/campaigns" className={`setting-layout-link ${currentPath === "/settings/campaigns" ? "active" : ""}`}>Campaigns</Link>
-          <Link to="/settings/recordings" className={`setting-layout-link ${currentPath === "/settings/recordings" ? "active" : ""}`}>Recordings</Link>
         </div>
         {children}
       </div>
